@@ -4,6 +4,7 @@ namespace WPTRT\CheckerCli\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputArgument;
 
 use WPTRT\CheckCli\Engine\ReportGenerator;
 use WPTRT\CheckerCli\Engine\Theme;
@@ -14,7 +15,9 @@ class ThemeCheckCommand extends Command
 {
     protected function configure()
     {
-        $this->setName('theme-check');
+        $this
+            ->setName('theme-check')
+            ->addArgument('path', InputArgument::REQUIRED, 'Path to the theme folder.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
