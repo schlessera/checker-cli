@@ -1,0 +1,6 @@
+## Composer
+/vendor/
+
+## Temporary Files
+*.swp
+*.un~
