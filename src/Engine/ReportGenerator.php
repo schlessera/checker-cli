@@ -1,7 +1,7 @@
 <?php
-namespace WPTRT\CheckCli\Engine;
+namespace WPTRT\CheckerCli\Engine;
 
-use WPTRT\CheckCli\Engine\CheckResults;
+use WPTRT\CheckerCli\Engine\CheckResults;
 
 class ReportGenerator
 {

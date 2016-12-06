@@ -1,5 +1,5 @@
 <?php
-namespace WPTRT\CheckCli\Engine;
+namespace WPTRT\CheckerCli\Engine;
 
 class CheckRunner {
     protected $check_report;

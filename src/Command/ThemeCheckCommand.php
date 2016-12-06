@@ -6,10 +6,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 
-use WPTRT\CheckCli\Engine\ReportGenerator;
+use WPTRT\CheckerCli\Engine\ReportGenerator;
 use WPTRT\CheckerCli\Engine\Theme;
 use WPTRT\CheckerCli\Engine\AnalyserStack;
-use WPTRT\CheckCli\Engine\CheckRunner;
+use WPTRT\CheckerCli\Engine\CheckRunner;
 
 class ThemeCheckCommand extends Command
 {
