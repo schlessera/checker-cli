@@ -9,6 +9,8 @@ use Symfony\Component\Console\Application;
 $application = new Application();
 
 // Bootstrap
+require __DIR__.'/Engine/AnalyserInterface.php';
+
 require __DIR__.'/Engine/Theme.php';
 require __DIR__.'/Engine/AnalyserStack.php';
 require __DIR__.'/Engine/CheckRunner.php';
