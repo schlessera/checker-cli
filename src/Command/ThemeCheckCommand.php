@@ -21,36 +21,36 @@ class ThemeCheckCommand extends Command
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
-	{
-		$output->writeln([
-			'ThemeCheck',
-			'==========',
-		]);
+    {
+        $output->writeln([
+            'ThemeCheck',
+            '==========',
+        ]);
 
-		// Create object for holding all information about the theme.
-		$theme = new Theme;
+        // Create object for holding all information about the theme.
+        $theme = new Theme;
 
-		// Extract information from the theme files, and add to object.
-		$analyser = new AnalyserStack( $theme );
-		$analysed_theme = $analyser->run();
+        // Extract information from the theme files, and add to object.
+        $analyser = new AnalyserStack($theme);
+        $analysed_theme = $analyser->run();
 
-		// Create check runner.
-		$check_runner = new CheckRunner();
+        // Create check runner.
+        $check_runner = new CheckRunner();
 
-		// Run checks.
-		$check_results = $check_runner->run( $analysed_theme );
+        // Run checks.
+        $check_results = $check_runner->run($analysed_theme);
 
-		// Interpret results
-		$report_generator = new ReportGenerator();
+        // Interpret results
+        $report_generator = new ReportGenerator();
 
-		$report = $report_generator->run( $check_results );
+        $report = $report_generator->run($check_results);
 
-		// Output results.
-		foreach ( $report as $key => $value ) {
-			$output->writeln([
-				$key,
-				$value,
-			] );
-		}
+        // Output results.
+        foreach ($report as $key => $value) {
+            $output->writeln([
+                $key,
+                $value,
+            ]);
+        }
     }
 }
