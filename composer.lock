@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1999a4bc1109f371124848a5efc2e69d",
-    "content-hash": "48e4909acd8ee528ba866b75423acf40",
+    "hash": "46a1196994b933c041f7e4914042bc78",
+    "content-hash": "7ffdf9497d40a2fd7ff1b1f61b6cb911",
     "packages": [
         {
             "name": "psr/log",
@@ -171,6 +171,55 @@
                 }
             ],
             "description": "Symfony Debug Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-11-19 20:35:20"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "ed30bd4b8a1457c910cf650982e1ca3c1f946d65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/ed30bd4b8a1457c910cf650982e1ca3c1f946d65",
+                "reference": "ed30bd4b8a1457c910cf650982e1ca3c1f946d65",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
             "time": "2016-11-19 20:35:20"
         },

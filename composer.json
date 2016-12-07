@@ -2,7 +2,8 @@
     "name": "wptrt/checker-cli",
     "description": "A command line checker tool.",
     "require": {
-        "symfony/console": "^3.2"
+        "symfony/console": "^3.2",
+        "symfony/finder": "^3.2"
     },
     "license": "GPL V2+",
     "authors": [
