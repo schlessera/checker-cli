@@ -30,6 +30,9 @@ class ThemeCheckCommand extends Command
         // Create object for holding all information about the theme.
         $theme = new Theme;
 
+        // Set theme path
+        $theme->path = $input->getArgument( 'path' );
+
         // Extract information from the theme files, and add to object.
         $analyser = new AnalyserStack($theme);
         $analysed_theme = $analyser->run();
