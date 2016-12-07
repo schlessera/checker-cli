@@ -5,12 +5,12 @@ use WPTRT\CheckerCli\Analysers\FileFinderAnalyser;
 
 class AnalyserStack
 {
-	private $theme;
+    private $theme;
 
-	public function __construct( $theme )
-	{
-		$this->theme = $theme;
-	}
+    public function __construct($theme)
+    {
+        $this->theme = $theme;
+    }
 
 	public function run()
 	{
