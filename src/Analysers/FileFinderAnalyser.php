@@ -6,7 +6,7 @@ use WPTRT\CheckerCli\Engine\Theme;
 
 class FileFinderAnalyser
 {
-    public function handle( Theme $theme )
+    public function handle(Theme $theme)
     {
         $finder = new Finder();
         $theme->fileFinder = $finder->files()->in($theme->path);
