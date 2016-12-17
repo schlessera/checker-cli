@@ -1,6 +1,7 @@
 <?php
 namespace WPTRT\CheckerCli\Engine;
 
-interface RunnerInterface {
+interface RunnerInterface
+{
     public function run();
 }
