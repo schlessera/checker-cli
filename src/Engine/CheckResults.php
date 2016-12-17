@@ -5,7 +5,8 @@ class CheckResults
 {
     private $analysed_theme;
 
-    public function __construct($analysed_theme) {
+    public function __construct($analysed_theme)
+    {
         $this->analysed_theme = $analysed_theme;
     }
 
@@ -16,7 +17,9 @@ class CheckResults
         $values['standard']    = 'WordPress-Theme';
         $phpcs_cli = new \PHP_CodeSniffer_CLI();
         ob_start();
-        $phpcs_cli->process( $values );
+        $numErrors = $phpcs_cli->process($values);
+        printf('Number of errors: %s', $numErrors);
+        $this->theme_passed = false;
         return ob_get_clean();
     }
 }
