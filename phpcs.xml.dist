@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="checker_cli">
+ <description>The coding standard for wptrt/checker-cli.</description>
+
+ <exclude-pattern>*/vendor/*</exclude-pattern>
+
+ <rule ref="PSR2"/>
+</ruleset>
