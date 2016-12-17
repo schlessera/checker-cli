@@ -21,31 +21,30 @@ class ThemeHeaderAnalyser implements AnalyserInterface
         'domain_path' => 'Domain Path',
     );
 
-    public function getStylesheet(Theme $theme)
-    {
-        return $theme->path . '/style.css';
-    }
-
     public function getHeader(Theme $theme)
     {
         foreach ($theme->fileFinder as $file) {
-            if ('style.css' === $file->getRelativePathname()) {
-                $contents = $file->getContents();
-                if (strlen($contents) > 8192) {
-                    $contents = substr($contents, 0, 8192);
-                }
-                $contents = str_replace("\r", "\n", $contents);
-                foreach ($this->file_headers as $field => $header) {
-                    if (preg_match('/^[ \t\/*#@]*' . preg_quote($header, '/') . ':(.*)$/mi', $contents, $match)
-                        && $match[1]) {
-                        $this->file_headers[ $field ] = $this->cleanHeaderComment($match[1]);
-                    } else {
-                        $this->file_headers[ $field ] = '';
-                    }
-                }
-                // Reduce memory.
-                unset($contents);
+            if ('style.css' !== $file->getRelativePathname()) {
+                continue;
             }
+
+            $contents = $file->getContents();
+            // Reduce the length of the content for the regex to be faster.
+            if (strlen($contents) > 8192) {
+                $contents = substr($contents, 0, 8192);
+            }
+            // Standardize the line endings.
+            $contents = str_replace("\r", "\n", $contents);
+            foreach ($this->file_headers as $field => $header) {
+                if (preg_match('/^[ \t\/*#@]*' . preg_quote($header, '/') . ':(.*)$/mi', $contents, $match)
+                    && $match[1]) {
+                    $this->file_headers[ $field ] = $this->cleanHeaderComment($match[1]);
+                } else {
+                    $this->file_headers[ $field ] = '';
+                }
+            }
+            // Reduce memory.
+            unset($contents);
         }
 
         $theme->ThemeHeader = $this->file_headers;
