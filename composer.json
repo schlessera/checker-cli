@@ -1,9 +1,17 @@
 {
     "name": "wptrt/checker-cli",
     "description": "A command line checker tool.",
+    "repositories": [
+      {
+          "type": "git",
+          "url": "https://github.com/WPTRT/WordPress-Coding-Standards"
+      }
+    ],
     "require": {
         "symfony/console": "^3.2",
-        "symfony/finder": "^3.2"
+        "symfony/finder": "^3.2",
+        "symfony/stopwatch": "^3.2",
+        "wp-coding-standards/wpcs": "dev-feature/theme-review-sniffs"
     },
     "license": "GPL V2+",
     "authors": [
@@ -18,5 +26,9 @@
         "psr-4": {
             "WPTRT\\CheckerCli\\": "src/"
         }
+    },
+    "scripts": {
+        "post-update-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/;",
+        "post-install-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/;"
     }
 }

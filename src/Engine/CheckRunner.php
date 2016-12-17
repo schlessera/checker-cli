@@ -7,7 +7,7 @@ class CheckRunner
 
     public function run($analysed_theme)
     {
-        $this->check_report = new CheckResults;
+        $this->check_report = new CheckResults($analysed_theme);
 
         return $this->check_report;
     }

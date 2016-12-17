@@ -9,7 +9,8 @@ class ReportGenerator
     {
 
         return [
-            'passed' => 'None',
+            'phpcs'  => $check_results->phpcs(),
+            'memory' => round((memory_get_peak_usage(true) / (1024 * 1024)), 2).'Mb',
         ];
     }
 }

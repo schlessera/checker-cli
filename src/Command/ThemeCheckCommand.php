@@ -5,6 +5,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Stopwatch\Stopwatch;
 
 use WPTRT\CheckerCli\Engine\ReportGenerator;
 use WPTRT\CheckerCli\Engine\Theme;
@@ -22,6 +23,8 @@ class ThemeCheckCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $stopwatch = new Stopwatch();
+        $stopwatch->start('ThemeCheck');
         $output->writeln([
             'ThemeCheck',
             '==========',
@@ -47,6 +50,7 @@ class ThemeCheckCommand extends Command
         $report_generator = new ReportGenerator();
 
         $report = $report_generator->run($check_results);
+        $report['time'] = $stopwatch->stop('ThemeCheck');
 
         // Output results.
         foreach ($report as $key => $value) {
