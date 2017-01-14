@@ -3,7 +3,8 @@
     "description": "A command line checker tool.",
     "require": {
         "symfony/console": "^3.2",
-        "symfony/finder": "^3.2"
+        "symfony/finder": "^3.2",
+        "symfony/stopwatch": "^3.2"
     },
     "license": "GPL V2+",
     "authors": [
@@ -13,9 +14,13 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "WPTRT\\CheckerCli\\": "src/"
         }
-    }
+    },
+    "bin": [
+        "theme-check"
+    ]
 }
