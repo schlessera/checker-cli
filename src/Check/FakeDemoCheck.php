@@ -21,9 +21,25 @@ class FakeDemoCheck implements Check
     {
         $theme->addIssue(
             new Issue(
+                Severity::info(),
+                new Message('This is a demo info issue.'),
+                Location::fromFile('testfile.nonsense', 1)
+            )
+        );
+
+        $theme->addIssue(
+            new Issue(
+                Severity::warning(),
+                new Message('This is a demo warning issue.'),
+                Location::fromFile('testfile.nonsense', 5, 10)
+            )
+        );
+
+        $theme->addIssue(
+            new Issue(
                 Severity::error(),
                 new Message('This is a demo error issue.'),
-                Location::fromFile('testfile.nonsense', 5, 10)
+                Location::fromFile('testfile.nonsense')
             )
         );
 

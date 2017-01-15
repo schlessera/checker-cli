@@ -29,7 +29,7 @@ class ThemeCheckCommand extends Command
             CheckRunner::class     => [
                 Check\FakeDemoCheck::class,
             ],
-            ReportGenerator::class => $output,
+            ReportGenerator::class => new IOInterfaces($input, $output),
         ];
 
         $theme = new Theme($input->getArgument('path'));

@@ -40,4 +40,19 @@ class FileLocation extends Location
         $this->lineStart = $lineStart;
         $this->lineEnd   = $lineEnd;
     }
+
+    public function __toString()
+    {
+        $string = $this->filepath;
+
+        if (null !== $this->lineStart) {
+            $string .= ':' . $this->lineStart;
+
+            if (null !== $this->lineEnd) {
+                $string .= '-' . $this->lineEnd;
+            }
+        }
+
+        return $string;
+    }
 }

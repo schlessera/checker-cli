@@ -72,4 +72,14 @@ class Issue
     {
         return $this->location;
     }
+
+    public function __toString()
+    {
+        return sprintf(
+            '[%1$s] %2$s (%3$s)',
+            (string)$this->severity,
+            (string)$this->message,
+            (string)$this->location
+        );
+    }
 }
