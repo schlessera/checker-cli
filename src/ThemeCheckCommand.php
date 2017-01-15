@@ -51,9 +51,9 @@ class ThemeCheckCommand extends Command
         $event = $stopwatch->stop('Theme Check');
         $output->writeln(
             sprintf(
-                'Executed theme check in %s seconds, using %s memory.',
-                $event->getDuration(),
-                $event->getMemory()
+                'Executed theme check in %.3f seconds, using %d kB of memory.',
+                $event->getDuration() / 1000,
+                $event->getMemory() / 1024
             )
         );
     }
