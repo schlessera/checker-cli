@@ -3,7 +3,7 @@
 /**
  * Interface Property.
  *
- * This colelcts common property IDs to keep them consistent over several analysers/checks.
+ * This collects common property IDs to keep them consistent over several analysers/checks.
  */
 interface Property
 {
